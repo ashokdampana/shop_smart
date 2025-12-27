@@ -17,6 +17,8 @@ backend/dist
 frontend/build
 backend/build
 
+backend/.env
+
 dist-ssr
 *.local
 
