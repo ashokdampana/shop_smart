@@ -8,15 +8,17 @@ function ProductPost () {
     const [stock, setStock] = useState(0);
     const [category, setCategory] = useState('');
 
+    const [ response, setResponse ] = useState('');
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const productData = {
             title, price: Number(price), stock: Number(stock), category
         }
         try {
-            const res = await API.post('/products', productData);
+            const res = await API.post('/api/products', productData);
+            setResponse( res.data.message);
             console.log('Product Saved: ', res.data);
-            alert("Product Saved");
         } catch (error) {
             console.error('Failed to post product: ', error.message);
             alert('Failed to post product');
@@ -57,6 +59,7 @@ function ProductPost () {
                 />
                 <button type="submit">Post Product</button>
             </form>
+            { response && <p>{ response }</p> }
         </div>
     )
 }

@@ -3,18 +3,23 @@ import Product from '../models/Product.js';
 
 const router = express.Router();
 
-router.get('/products', async (req, res) => {
-    const products = await Product.find();
-    res.json( products );
-})
-
-router.post('/products', async (req, res) => {
+router.post('/', async (req, res) => {
     const [title, price, stock, category] = req.body;
-    const newProduct = new product({
+    if ( !title || !price || !stock || !category ) {
+        res.status(400).json({message: "All fields required"})
+    }
+    const newProduct = new Product({
         title, price, stock, category
     })
     await newProduct.save();
-    res.json( product );
-})
+    res.json({ message: newProduct });
+});
+
+router.get('/', async (req, res) => {
+    const products = await Product.find();
+    if (! products ) return res.status(400).json({message: "No Products"})
+    res.json({message: products });
+});
+
 
 export default router;
