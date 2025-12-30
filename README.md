@@ -20,3 +20,8 @@ DAY 3 – Fetch Products (READ) : Show product list
 GET /api/products
 Fetch in React using useEffect
 
+
+DAY 4 – Delete Product : Admin deletes product
+
+DELETE /api/products/:id
+Remove UI item instantly

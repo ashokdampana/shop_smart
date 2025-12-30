@@ -4,15 +4,13 @@ import Product from '../models/Product.js';
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-    const [title, price, stock, category] = req.body;
+    const { title, price, stock, category } = req.body;
     if ( !title || !price || !stock || !category ) {
         res.status(400).json({message: "All fields required"})
     }
-    const newProduct = new Product({
-        title, price, stock, category
-    })
+    const newProduct = new Product({ title, price, stock, category })
     await newProduct.save();
-    res.json({ message: newProduct });
+    res.status(201).json({ message: newProduct });
 });
 
 router.get('/', async (req, res) => {

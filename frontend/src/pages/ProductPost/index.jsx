@@ -1,6 +1,6 @@
 import { useState } from "react"
 import API from '../../services/api.js'
-
+import './index.css'
 
 function ProductPost () {
     const [title, setTitle] = useState('');

@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Refined Concrete Chicken",
+    "price": "215.09",
+    "stock": 16,
+    "category": "Outdoors"
+  },
+  {
+    "title": "Frozen Silk Tuna",
+    "price": "142.85",
+    "stock": 53,
+    "category": "Home"
+  },
+  {
+    "title": "Fantastic Silk Hat",
+    "price": "416.39",
+    "stock": 21,
+    "category": "Home"
+  },
+  {
+    "title": "Modern Aluminum Chair",
+    "price": "220.09",
+    "stock": 70,
+    "category": "Computers"
+  },
+  {
+    "title": "Handcrafted Plastic Mouse",
+    "price": "236.19",
+    "stock": 71,
+    "category": "Jewelry"
+  },
+  {
+    "title": "Handcrafted Granite Car",
+    "price": "294.89",
+    "stock": 73,
+    "category": "Books"
+  },
+  {
+    "title": "Oriental Metal Chips",
+    "price": "166.22",
+    "stock": 64,
+    "category": "Electronics"
+  },
+  {
+    "title": "Rustic Gold Tuna",
+    "price": "286.60",
+    "stock": 79,
+    "category": "Electronics"
+  },
+  {
+    "title": "Small Plastic Pants",
+    "price": "301.95",
+    "stock": 59,
+    "category": "Beauty"
+  },
+  {
+    "title": "Incredible Cotton Bacon",
+    "price": "472.29",
+    "stock": 24,
+    "category": "Automotive"
+  }
+]

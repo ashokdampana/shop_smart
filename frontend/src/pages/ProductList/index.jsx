@@ -8,29 +8,19 @@ const ProductList = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        async function fetch () {
-            try {
-                const res = await API.get('/api/products');
-                setProducts( res.data.message || []);
-            } catch (e) {
-                setError( e.message);
-            }
-        }
-        fetch();
+        API.get('/api/products')
+            .then(res => setProducts(res.data))
+            .catch(err => setError(err.message));
     }, []);
-
-
-    if (error ) {
-        return <div>Error: { error }</div>
-    }
-
+    console.log(products);
     return (
-        <div>
+        <div className="product-list">
             <ul>
-                { products.map( p => (<li key={p.id}>{p.title}</li>)
-                )}
+                { products.map( p => (
+                    <li key={p.id}>{ p.title }</li>
+                ))}
             </ul>
-            {error && <div>{error}</div>}
+            {error && <p>{error}</p>}
         </div>
     )
 }
